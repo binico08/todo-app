@@ -1,0 +1,20 @@
+@import "./Variables.scss";
+
+.list-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background-color: var(--container-background-color);
+    border-radius: 0 0 5px 5px;
+    font-size: 0.875rem;
+    color: var(--completed-font-color);
+    transition: .3s ease-in-out all;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+
+    button {
+        font-size: 0.875rem;
+        color: var(--completed-font-color);
+    }
+}

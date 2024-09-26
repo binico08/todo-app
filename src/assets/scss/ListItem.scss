@@ -1,0 +1,108 @@
+@import "./Variables.scss";
+
+.list-item {
+  padding: 1.325rem 2rem;
+  color: var(--font-color);
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease-in-out all;
+  position: relative;
+  font-size: 1.25rem;
+
+  @media (max-width: $mobile) {
+    font-size: 0.875rem;
+    padding: 1.25rem;
+  }
+
+  img {
+    margin-left: auto;
+    opacity: 0;
+    transition: 0.3s ease-in-out all;
+
+    @media (max-width: $mobile) {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    height: 26px;
+    width: 26px;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    border-radius: 100%;
+    margin-right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+
+    @media (max-width: $mobile) {
+      margin-right: 1.25rem;
+    }
+  }
+
+  &::after {
+    content: url("../images/icon-check.svg");
+    background: $background_grad;
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      left: 1.25rem;
+    }
+  }
+
+  &::before,
+  &::after {
+    transition: 0.3s ease-in-out all;
+  }
+
+  &:hover {
+    color: var(--hover-font-color);
+    cursor: pointer;
+
+    img {
+      opacity: 1;
+    }
+
+    &::before {
+      // border-radius: 50px; /*1*/
+      border: 2px solid transparent; /*2*/
+      background: $background_grad border-box; /*3*/
+      -webkit-mask: /*4*/ linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; /*5'*/
+      mask-composite: exclude; /*5*/
+    }
+  }
+
+  &.completed {
+    p {
+      text-decoration: line-through;
+      color: var(--completed-font-color);
+    }
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "./Variables.scss";
+
+form.footer-filter,
+fieldset {
+  border: 0;
+  outline: 0;
+  display: flex;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--completed-font-color);
+
+  label {
+    transition: 0.3s ease-in-out all;
+
+    &.active {
+      color: var(--filter-active-color);
+    }
+
+    &:hover {
+      color: var(--hover-font-color);
+      cursor: pointer;
+    }
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+  }
+
+  @media (max-width: $mobile) {
+    background-color: var(--container-background-color);
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}
+
+form.footer-filter {
+    @media (max-width: $mobile){
+        margin-top: 1.25rem;
+        padding: 1.25rem;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+      }
+}

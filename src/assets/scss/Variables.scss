@@ -1,0 +1,84 @@
+@use "sass:map";
+
+// Responsive 
+
+$mobile: 768px;
+
+// Colors
+
+$bright_blue: hsl(220, 98%, 61%);
+$background_grad: linear-gradient(
+  180deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+
+// Light Theme
+
+$light_gray: hsl(0, 0%, 98%);
+$v_light_grayish_blue: hsl(236, 33%, 92%);
+$light_grayish_blue: hsl(233, 11%, 84%);
+$dark_grayish_blue: hsl(236, 9%, 61%);
+$very_dark_grayish_blue: hsl(235, 19%, 35%);
+
+// Dark Theme
+
+$Very_Dark_Blue: hsl(235, 21%, 11%);
+$Very_Dark_Desaturated_Blue: hsl(235, 24%, 19%);
+$Light_Grayish_Blue: hsl(234, 39%, 85%);
+$Light_Grayish_Blue_Hover: hsl(236, 33%, 92%);
+$Dark_Grayish_Blue: hsl(234, 11%, 52%);
+$Darker_Grayish_Blue: hsl(233, 14%, 35%);
+$Very_Dark_Grayish_Blue: hsl(237, 14%, 26%);
+
+$light: (
+    background-image: url('../images/bg-desktop-light.jpg'),
+    background-color: hsl(236, 33%, 92%),
+    container-background-color: hsl(0, 0%, 98%),
+    placeholder-color: hsl(236, 9%, 61%),
+    font-color: hsl(235, 19%, 35%),
+    completed-font-color: hsl(236, 9%, 61%),
+    light-font-color: hsl(236, 9%, 61%),
+    hover-font-color: hsl(235, 19%, 35%),
+    border-color: hsl(236, 33%, 92%),
+    filter-active-color: hsl(220, 98%, 61%),
+);
+
+$dark: (
+    background-image: url('../images/bg-desktop-dark.jpg'),
+    background-color: hsl(235, 21%, 11%),
+    container-background-color: hsl(235, 24%, 19%),
+    placeholder-color: hsl(233, 14%, 35%),
+    font-color: hsl(234, 39%, 85%),
+    light-font-color: hsl(234, 39%, 85%),
+    completed-font-color: hsl(233, 14%, 35%),
+    hover-font-color: hsl(236, 33%, 92%),
+    border-color: hsl(237, 14%, 26%),
+    filter-active-color: hsl(220, 98%, 61%),
+);
+
+.App.light {
+    --background-image: #{map.get($light, background-image)};
+    --background-color: #{map.get($light, background-color)};
+    --container-background-color: #{map.get($light, container-background-color)};
+    --placeholder-color: #{map.get($light, placeholder-color)};
+    --font-color: #{map.get($light, font-color)};
+    --light-font-color: #{map.get($light, light-font-color)};
+    --completed-font-color: #{map.get($light, completed-font-color)};
+    --hover-font-color: #{map.get($light, hover-font-color)};
+    --border-color: #{map.get($light, border-color)};
+    --filter-active-color: #{map.get($light, filter-active-color)};
+}
+
+.App.dark {
+    --background-image: #{map.get($dark, background-image)};
+    --background-color: #{map.get($dark, background-color)};
+    --container-background-color: #{map.get($dark, container-background-color)};
+    --placeholder-color: #{map.get($dark, placeholder-color)};
+    --font-color: #{map.get($dark, font-color)};
+    --light-font-color: #{map.get($dark, light-font-color)};
+    --completed-font-color: #{map.get($dark, completed-font-color)};
+    --hover-font-color: #{map.get($dark, hover-font-color)};
+    --border-color: #{map.get($dark, border-color)};
+    --filter-active-color: #{map.get($dark, filter-active-color)};
+}

@@ -1,0 +1,13 @@
+@import "./Variables.scss";
+
+.list-body {
+    width: 100%;
+    background-color: var(--container-background-color);
+    border-radius: 5px 5px 0 0;
+    transition: .3s ease-in-out all;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+
+    .todo-list {
+        list-style: none;
+    }
+}

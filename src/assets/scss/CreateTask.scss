@@ -1,0 +1,52 @@
+@import "./Variables.scss";
+
+.form-todo {
+  width: 100%;
+  background-color: var(--container-background-color);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+  transition: 0.3s ease-in-out all;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+
+  @media (max-width: $mobile) {
+    padding-left: 1.25rem;
+  }
+
+  input {
+    width: 90%;
+    background: transparent;
+    outline: none;
+    border: 0;
+    font-size: 1.25rem;
+    padding: 1.5rem 2rem 1.5rem 0;
+    color: var(--font-color);
+
+    &::placeholder {
+      color: var(--placeholder-color);
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    height: 26px;
+    width: 26px;
+    border: 2px solid var(--border-color);
+    transition: 0.3s ease-in-out all;
+    border-radius: 100%;
+    margin-right: 2rem;
+
+    @media (max-width: $mobile) {
+      margin-right: 1.25rem;
+      width: 29px;
+    }
+  }
+}
